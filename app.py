@@ -16,5 +16,5 @@ async def query(request: QueryRequest):
     return {"answer": answer}
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))  # default 8000 locally
+    port = int(os.environ.get("PORT", 10000))  # default 8000 locally
     uvicorn.run("app:app", host="0.0.0.0", port=port)
