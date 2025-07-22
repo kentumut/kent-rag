@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from retriever import load_faiss_index, query_rag  # Your existing functions
+from retriever import build_faiss_index, query_rag  # Your existing functions
 
 app = FastAPI()
 
