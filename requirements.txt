@@ -7,3 +7,5 @@ sentence-transformers
 langchain-huggingface
 pydantic
 langchain-core
+langchain
+dotenv
