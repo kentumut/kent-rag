@@ -5,3 +5,4 @@ fastapi
 uvicorn
 langchain-community
 mistralai
+sentence-transformers
