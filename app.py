@@ -1,12 +1,13 @@
-from rag_chain import query_rag
+from fastapi import FastAPI
+from pydantic import BaseModel
+from retriever import load_faiss_index, query_rag  # Your existing functions
 
-if __name__ == "__main__":
-    print("Type 'exit' to quit.")
-    while True:
-        user_input = input("Ask me anything about Kent > ")
-        if user_input.lower() in {"exit", "quit"}:
-            break
-        response = query_rag(user_input)
-        print("\nAnswer:", response["answer"])
-        print("Sources:", response["sources"])
-        print("-" * 40)
+app = FastAPI()
+
+class QueryRequest(BaseModel):
+    question: str
+
+@app.post("/query")
+async def query(request: QueryRequest):
+    answer = query_rag(request.question)
+    return {"answer": answer}
