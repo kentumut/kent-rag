@@ -20,3 +20,5 @@ vectorstore = FAISS.from_documents(chunks, embedding_model)
 
 # Save index
 vectorstore.save_local("faiss_index")
+
+print("FAISS index built and saved.")

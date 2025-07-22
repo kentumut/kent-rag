@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from retriever import build_faiss_index
 from rag_chain import query_rag
 
 app = FastAPI()
